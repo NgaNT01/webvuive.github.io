@@ -8,10 +8,24 @@
 header {
     display: flex;
     justify-content: space-between;
-    margin-top: 10px;
+    /* margin-top: 10px; */
     padding: 12px 50px;
     height: 70px;
     align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    background: rgba(255, 255, 255, 0.3);
+    width: 100%;
+}
+
+.sticky {
+    background: rgba(255, 255, 255, 1);
+}
+
+.header:hover {
+    background: rgba(255, 255, 255, 1);
 }
 
 li {
@@ -25,6 +39,7 @@ a {
 .header__logo {
     flex: 1;
     padding-bottom: 5px;
+    margin-top: 13px;
 }
 
 .header__menu {
@@ -50,13 +65,14 @@ a {
     visibility: hidden;
     top: 50px;
     transition: 0.2s;
-
+    z-index: 1;
+    background-color: #fff;
 }
 
 .header__menu>li>a {
     font-size: 12px;
     font-weight: bold;
-    color: #333;
+    color: #000;
     display: block;
     line-height: 20px;
 }
@@ -64,13 +80,13 @@ a {
 .header__submenu>li>a {
     font-size: 12px;
     font-weight: bold;
-    color: #333;
+    color: #000;
     display: block;
     line-height: 20px;
 }
 
 .header__submenu ul a {
-    color: #333;
+    color: #000;
     padding-left: 20px;
     font-size: 12px;
 }
@@ -82,6 +98,23 @@ a {
 
 .header__others>li {
     padding: 0 10px;
+    position: relative;
+}
+
+.header__others li::after {
+    content: "";
+    display: block;
+    width: 1px;
+    height: 80%;
+    background: #ccc;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.header__others li:last-child::after {
+    display: none;
 }
 
 .header__others>li:first-child {
@@ -92,7 +125,8 @@ a {
     width: 100%;
     border: none;
     border-bottom: 1px solid #333;
-
+    background: transparent;
+    outline: none;
 }
 
 .header__others>li:first-child i {
@@ -100,12 +134,16 @@ a {
     right: 10px;
 }
 
+.header__others li a {
+    color: #000;
+}
+
 .aspect-ratio-169 {
     display: block;
     position: relative;
     /* padding-top: 56.25%; */
     transition: 0.3s;
-    height: 550px;
+    height: 650px;
 
 
 }
@@ -115,12 +153,12 @@ a {
     position: absolute;
     width: 100%;
     height: 100%;
-    top: 20px;
+    /* top: 20px; */
     left: 8%;
 }
 
 #slider {
-    padding-bottom: 60px;
+    padding-bottom: 40px;
     border-bottom: 2px solid #333;
     overflow: hidden;
 }
@@ -130,7 +168,7 @@ a {
     position: absolute;
     width: 100%;
     display: flex;
-    top: 660px;
+    top: 665px;
     justify-content: center;
 }
 
@@ -145,4 +183,92 @@ a {
 
 .dot-active {
     background-color: #333;
+}
+
+/*----------------App----------------------*/
+
+.container {
+    text-align: center;
+    align-items: center;
+    padding: 130px 0 30px 0;
+}
+
+.download-app {
+    margin: 30px;
+}
+
+.download-app img {
+    cursor: pointer;
+}
+
+.container p {
+    line-height: 20px;
+    letter-spacing: 1px;
+    font-size: 17px;
+    color: #000;
+    font-weight: bold;
+}
+
+.container input {
+    margin: 30px;
+    border: none;
+    border-bottom: 1px solid #000;
+    padding-bottom: 10px;
+    text-align: center;
+    width: 400px;
+    outline: none;
+}
+
+/*--------------Footer-----------------*/
+
+.footer__top {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+}
+
+.footer__top li {
+    padding: 0 15px 0 15px;
+    position: relative;
+}
+
+.footer__top li::after {
+    content: "";
+    display: block;
+    width: 1px;
+    height: 80%;
+    background: #ccc;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.footer__top li:last-child::after {
+    display: none;
+}
+
+.footer__top li:last-child a {
+    margin-right: 12px;
+    color: #333;
+}
+
+.footer__top li a {
+    color: #000;
+    font-weight: bold;
+}
+
+.footer__mid {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 14px;
+}
+
+.footer__bottom {
+    margin-top: 30px;
+    margin-bottom: 10px;
+    text-align: center;
+    font-style: italic;
+    font-size: 14px;
 }
